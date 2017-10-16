@@ -62,8 +62,9 @@
                 <feed_recipe>r_u_nat</feed_recipe> 
                 <product_commod>c_uox</product_commod>
                 <tails_commod>waste</tails_commod>
-                <max_feed_inventory>30000000</max_feed_inventory>
+                <max_feed_inventory>1e100</max_feed_inventory>
                 <tails_assay>0.003</tails_assay>
+                <tails_assay_uncertainty>0.01</tails_assay_uncertainty>
             </Enrichment>
         </config>
     </prototype>
@@ -95,14 +96,16 @@
                     <val>c_uox_spent</val>
                 </fuel_outcommods>
                 <cycle_time>5</cycle_time> <!-- BU/30days *Mcore/batch / P_eff = 50./(30)*88758./3./(3000*0.9) -->
-                <<cycle_time_uncertainty>1</cycle_time_uncertainty>
-                <refuel_time>3</refuel_time>
+                <cycle_time_uncertainty>0.1</cycle_time_uncertainty>
+                <refuel_time>1</refuel_time>
+                <refuel_time_uncertainty>0.1</refuel_time_uncertainty>
                 
                 <n_batch_core>3</n_batch_core>
                 <batch_size>30000</batch_size>
-                <n_batch_fresh>2</n_batch_fresh> 
+                <n_batch_fresh>1</n_batch_fresh> 
                 <power>3600</power>
-                <power_cap>3600</power_cap>
+                <power_cap>1200</power_cap>
+                <power_uncertainty>0.1</power_uncertainty>
                 <burnup>30</burnup>
             </cyclassReactor>
         </config>
@@ -118,7 +121,8 @@
                 <out_commods>
                     <val>c_uox_spent_stored</val>
                 </out_commods>
-                <residence_time>0</residence_time>
+                <residence_time>72</residence_time>
+                <residence_time_uncertainty>0.1</residence_time_uncertainty>
             </Storage>
         </config>
     </prototype>
@@ -133,6 +137,8 @@
                     <val>enrichment</val>
                     <val>storage_uox_spent</val>
                     <val>pwr</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
                 </prototypes>
 
                 <build_times>
@@ -141,9 +147,13 @@
                     <val>1</val>
                     <val>1</val>
                     <val>1</val>
+                    <val>721</val>
+                    <val>1741</val>
                 </build_times>
 
                 <n_build>
+                    <val>1</val>
+                    <val>1</val>
                     <val>1</val>
                     <val>1</val>
                     <val>1</val>
